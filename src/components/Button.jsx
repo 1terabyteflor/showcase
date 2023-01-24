@@ -1,8 +1,20 @@
 import React from 'react'
+import styles from '../styles/Globals'
 
-const Button = () => {
+const Button = ({ assetUrl, link }) => {
   return (
-    <div>Button</div>
+    <div 
+      className={styles.btnBlack}
+      onClick={() => window.open(link, "_blank")}>
+      <img 
+        className={styles.btnIcon}
+        alt='expo icon'
+        src={assetUrl}/>
+        <div className='flex flex-col justify-start ml-4'>
+          <p className={`${styles.btnText} font-normal text-xs`}>View it on</p>
+          <p className={`${styles.btnText} font-bold text-sm`}>Expo Store</p>
+        </div>
+    </div>
   )
 }
 
